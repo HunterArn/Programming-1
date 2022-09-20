@@ -79,11 +79,53 @@ class ktools:
      self.pick()
 
   
+  
+
+  
 def main():
     """ Karel code goes here! """
     kt = ktools()
- 
-   
+
+    kt.tl()
+    kt.m2()
+    kt.tr()
+    kt.m()
+    kt.tr()
+    kt.m2()
+    kt.tl()
+    kt.tl()
+    kt.m()
+    kt.tr()
+    kt.m()
+    kt.tr()
+    kt.m()
+    kt.tl()
+    kt.m()
+    kt.tl()
+    kt.m3()
+    kt.tr()
+    kt.m()
+    kt.tr()
+    kt.m3()
+    kt.tl()
+    kt.m()
+    kt.tl()
+    kt.m2()
+    kt.tr()
+    kt.m()
+    kt.tr()
+    kt.m2()
+    kt.tl()
+    kt.m()
+    kt.tl()
+    kt.m2()
+    kt.tr()
+    kt.m()
+    kt.tr()
+    kt.m2()
+    kt.tl()
+
+  
     pass
 
 
