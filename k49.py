@@ -1,4 +1,5 @@
 from stanfordkarel import*
+from time import sleep
 
 
 class ktools:
@@ -78,93 +79,88 @@ class ktools:
      self.m()
      self.pick()
 
+  def fic(self) -> bool:
+    """Front is Clear"""
+    return front_is_clear()
 
-  def h(self):
-     """Print H using beepers"""
-     self.tl()
-     self.put5()
-     self.tr()
-     self.m()
-     self.m()
-     self.m()
-     self.tr()
-     self.put5()
-     self.ta()
-     self.m()
-     self.m()
-     self.tl()
-     self.m()
-     self.put2()
-     self.tl()
-     self.m()
-     self.m()
-     self.tl()
-     self.m4()
+  def fib(self) -> bool:
+    """Front is Block"""
+    return not self.fic()
 
 
-
-  def e(self):
-    self.m()
-    self.put()
-    self.tl()
-    self.m()
-    self.put()
-    self.m()
-    self.put()
-    self.m()
-    self.put()
-    self.m()
-    self.put()
-    self.tr()
-    self.m()
-    self.put2()
-    self.tr()
-    self.m()
-    self.m()
-    self.put()
-    self.tr()
-    self.m()
-    self.put()
-    self.tl()
-    self.m()
-    self.m()
-    self.put()
-    self.tl()
-    self.m()
-    self.put()
-    self.m()
-    self.m()
-
-
-  def u(self):
-    self.put()
-    self.tl()
-    self.m()
-    self.put2()
-    self.m()
-    self.put2()
-    self.tl()
-    self.tl()
-    self.m4()
-    self.tl()
-    self.m()
-    self.put2()
-    self.m()
-    self.put()
-    self.tl()
+      
     
+  def ric(self) -> bool:
+    """Right is clear"""
+    self.tr()
+    if self.fic():
+      self.tl()
+      return True
+    self.tl()
+    return False
+  
 
 
+  
+  def rid(self) -> bool:
+    """Right is Block"""
+    return not self.ric()
+
+  def mazemove(self):
+    """Maze Move"""
+    if self.fib():
+      self.tl()
+    else:        # Otherwise...
+      self.m()
+      if self.ric():
+        self.tr()
+        self.m()
+        if self.ric():
+          self.tr()
+          self.m()
+    pass
 
   
 def main():
     """ Karel code goes here! """
     kt = ktools()
-  
-    kt.h()
+ 
+    kt.m()
+    kt.tl()
+    kt.m()
+    kt.mazemove()
+    sleep(3)
 
+    kt.m()
+    kt.m3()
+    kt.mazemove()
+    sleep(3)
 
-  
+    kt.m()
+    kt.tr()
+    kt.m()
+    kt.tr()
+    kt.m4()
+    kt.m2()
+    kt.tr()
+    kt.m()
+    kt.ta()
+    kt.mazemove()
+    sleep(3)
+
+    kt.m()
+    kt.tr()
+    kt.m4()
+    kt.m()
+    kt.tr()
+    kt.m2()
+    kt.tl()
+    kt.m()
+    kt.ta()
+    kt.mazemove()
+    sleep(3)
+
+    kt.m()
     pass
 
 

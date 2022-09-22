@@ -78,93 +78,73 @@ class ktools:
      self.m()
      self.pick()
 
+  def fic(self) -> bool:
+    """Front is Clear"""
+    return Front_is_Clear
 
-  def h(self):
-     """Print H using beepers"""
-     self.tl()
-     self.put5()
-     self.tr()
-     self.m()
-     self.m()
-     self.m()
-     self.tr()
-     self.put5()
-     self.ta()
-     self.m()
-     self.m()
-     self.tl()
-     self.m()
-     self.put2()
-     self.tl()
-     self.m()
-     self.m()
-     self.tl()
-     self.m4()
-
-
-
-  def e(self):
-    self.m()
-    self.put()
-    self.tl()
-    self.m()
-    self.put()
-    self.m()
-    self.put()
-    self.m()
-    self.put()
-    self.m()
-    self.put()
+  def fib(self) -> bool:
+    """Front is Block"""
     self.tr()
-    self.m()
-    self.put2()
-    self.tr()
-    self.m()
-    self.m()
-    self.put()
-    self.tr()
-    self.m()
-    self.put()
+    if self.fic():
+      self.tl()
+      return True
     self.tl()
-    self.m()
-    self.m()
-    self.put()
-    self.tl()
-    self.m()
-    self.put()
-    self.m()
-    self.m()
+    return False
+  
+  def ric(self) -> bool:
+    """Right is clear"""
+    return ric_is_clear
 
 
-  def u(self):
+  
+  def rid(self) -> bool:
+    """Right is Block"""
+    return not self.ric()
+
+  def mazemove(self):
+    """Maze Move"""
+    if self.fib():
+      self.tl()
+    else:   # Otherwise...
+      self.m()
+      if self.ric():
+        self.tr()
+        self.m()
+        if self.ric():
+          self.tr()
+          self.m()
+    pass
+
+
+  def mm(self, num):
+    """Move Multiple"""
+    for number in range(num):
+      self.m()
+
+  def pickm(self, num):
+    """Pick Multiple"""
+    for i in range(num-1):
+      self.pick()
+      self.m()
+    self.pick()
+
+  def putm(self, num):
+    """Put Multiple"""
+    for _ in range(0, num-1):
+      self.put()
+      self.m()
     self.put()
-    self.tl()
-    self.m()
-    self.put2()
-    self.m()
-    self.put2()
-    self.tl()
-    self.tl()
-    self.m4()
-    self.tl()
-    self.m()
-    self.put2()
-    self.m()
-    self.put()
-    self.tl()
-    
-
-
-
   
 def main():
     """ Karel code goes here! """
     kt = ktools()
-  
-    kt.h()
-
-
-  
+    kt.tl()
+    kt.mm(5)
+    kt.ta()
+    kt.putm(5)
+    kt.tl()
+    kt.mm(2)
+   
     pass
 
 
