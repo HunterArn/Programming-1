@@ -104,7 +104,6 @@ class ktools:
 
 
   def e(self):
-    self.m()
     self.put()
     self.tl()
     self.m()
@@ -152,8 +151,76 @@ class ktools:
     self.m()
     self.put()
     self.tl()
-    self.
+    self.m()
+    self.put2()
+    self.m()
+    self.put2()
+    self.ta()
+    self.m4()
+    self.tl()
+    self.m2()
 
+
+
+  def n(self):
+    self.put()
+    self.tl()
+    self.m()
+    self.put2()
+    self.m()
+    self.put2()
+    self.tr()
+    self.m()
+    self.put2()
+    self.m()
+    self.put()
+    self.tr()
+    self.m()
+    self.put2()
+    self.m()
+    self.put2()
+    self.tl()
+    self.m2()
+
+
+  def t(self):
+    self.m()
+    self.put()
+    self.tl()
+    self.m()
+    self.put2()
+    self.m()
+    self.put2()
+    self.ta()
+    self.m()
+    self.tr()
+    self.m()
+    self.put()
+    self.ta()
+    self.m2()
+    self.put()
+    self.tr()
+    self.m3()
+    self.tl()
+    self.m2()
+    
+
+  def r(self):
+    self.put()
+    self.tl()
+    self.m()
+    self.put2()
+    self.m()
+    self.put2()
+    self.tr()
+    self.m()
+    self.put2()
+    self.m()
+    self.put()
+    self.tr()
+    self.m4()
+    self.tl()
+    self.m2()
 
 
   
@@ -163,8 +230,10 @@ def main():
   
     kt.h()
     kt.u()
-
-  
+    kt.n()
+    kt.t()
+    kt.e()
+    kt.r()
     pass
 
 
