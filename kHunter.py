@@ -152,7 +152,7 @@ class ktools:
     self.m()
     self.put()
     self.tl()
-    
+    self.
 
 
 
@@ -162,7 +162,7 @@ def main():
     kt = ktools()
   
     kt.h()
-
+    kt.u()
 
   
     pass
