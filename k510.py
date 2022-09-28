@@ -1,4 +1,4 @@
-from stanfordkarel import*
+from stanfordkarel import *
 
 
 class ktools:
@@ -22,91 +22,78 @@ class ktools:
     self.tl()
 
   def pick(self):
-    """pick_beeper"""
+    """Pick Beeper"""
     pick_beeper()
 
   def put(self):
-   """put_beeper"""
-   put_beeper()
+    """Put Beeper"""
+    put_beeper()
 
   def put2(self):
-     """put 2 beepers in a line"""
-     self.put()
-     self.m()
-     self.put()
-     
+    """Put 2 beepers in a line"""
+    self.put()
+    self.m()
+    self.put()
+
   def put5(self):
-     """put 5 beepers in a line"""
-     self.put2()
-     self.m()
-     self.put2()
-     self.m()
-     self.put()
+    """Put 5 beepers in a line"""
+    self.put2()
+    self.m()
+    self.put2()
+    self.m()
+    self.put()
 
-  def m2(self):
-     self.m()
-     self.m()
-
-
-  def m3(self):
-     self.m2()
-     self.m()
-
-  def m4(self):
-     self.m2()
-     self.m2()
-  
-  def pick2(self):
-     self.pick()
-     self.m()
-     self.pick()
-
-  def pick3(self):
-     self.pick()
-     self.m()
-     self.pick()
-     self.m()
-     self.pick()
-  
-  
-  def pick4(self):
-     self.pick()
-     self.m()
-     self.pick()
-     self.m()
-     self.pick()
-     self.m()
-     self.pick()
-
+  def h(self):
+    """Print H using beepers"""
+    self.tl()
+    self.put5()
+    self.tr()
+    self.m()
+    self.m()
+    self.m() 
+    self.tr()
+    self.put5()
+    self.ta()
+    self.m()
+    self.m()
+    self.tl()
+    self.m()
+    self.put2()
+    self.tl()
+    self.m()
+    self.m()
+    self.tl()
+    self.m()
+    self.m()
+    self.m()
+    self.m()
 
   def fic(self) -> bool:
     """Front is Clear"""
-    return Front_is_Clear
+    return front_is_clear()
 
   def fib(self) -> bool:
-    """Front is Block"""
+    """Front is Blocked"""
+    return not self.fic()
+
+  def ric(self) -> bool:
+    """Right is Clear"""
     self.tr()
     if self.fic():
       self.tl()
-      return True
+      return True  # Immediately leaves the function
     self.tl()
     return False
-  
-  def ric(self) -> bool:
-    """Right is clear"""
-    return ric_is_clear
 
-
-  
-  def rid(self) -> bool:
-    """Right is Block"""
+  def rib(self) -> bool:
+    """Right is Blocked"""
     return not self.ric()
 
   def mazemove(self):
     """Maze Move"""
     if self.fib():
       self.tl()
-    else:   # Otherwise...
+    else:  # Otherwise...
       self.m()
       if self.ric():
         self.tr()
@@ -115,7 +102,6 @@ class ktools:
           self.tr()
           self.m()
     pass
-
 
   def mm(self, num):
     """Move Multiple"""
@@ -136,9 +122,7 @@ class ktools:
       self.m()
     self.put()
 
-
-
-def SOB(self) -> bool:
+  def SOB(self) -> bool:
     """Standing on Beeper"""
     return beepers_present()
 
@@ -172,15 +156,18 @@ def SOB(self) -> bool:
         self.tl()
         self.m()
     pass
-        
-        
 
-   
+
 def main():
     """ Karel code goes here! """
     kt = ktools()
  
-   
+    while not kt.SOB():
+      kt.jump()
+    
+  
+    kt.pick()
+  
     pass
 
 
